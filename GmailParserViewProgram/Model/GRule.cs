@@ -8,6 +8,7 @@ namespace GmailParserViewProgram.Model
 {
     public class GRule
     {
+        // Тестовый комментарий для github
         readonly static public  List<GRule> grules = new List<GRule>();
 
         readonly public string tag;
