@@ -9,7 +9,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using GmailParser;
 using GmailParserViewProgram.Model;
 
 namespace GmailParserViewProgram
@@ -26,16 +25,14 @@ namespace GmailParserViewProgram
 
             //Act.DataLoginAct.Read();
 
-            UserData.Init().Email = "oleg";
-            tb_mail.Text = UserData.GetUserData().Email;
 
-            DataLoginModel dataLogin = new DataLoginModel("chernyshev360@gmail.com" , "1234");
+            DataLoginModel dataLogin = new DataLoginModel("me" , "1234");
 
             GLogin.Init();
             GLogin.Glogin.CreateGmailService();
             GMessage gMessage = new GMessage(GLogin.Glogin.GmailService, dataLogin);
 
-            string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("TestTag" , "testpath") , gMessage.GetMessages()));
+            //string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("TestTag" , "testpath") , gMessage.GetMessages()));
 
 
 
@@ -120,6 +117,11 @@ namespace GmailParserViewProgram
         private void timer_Tick(object sender, EventArgs e)
         {
             if (MailTrigerHide) FormMailTrigger.ActiveForm.Hide();
+        }
+
+        private void tb_password_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
