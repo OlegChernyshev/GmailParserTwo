@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace GmailParserViewProgram
+namespace GmailParserViewProgram.Model
 {
     public class GRule
     {

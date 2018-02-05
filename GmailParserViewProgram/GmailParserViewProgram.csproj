@@ -104,7 +104,7 @@
     <Compile Include="FormMailTriggerLogic.Designer.cs">
       <DependentUpon>FormMailTriggerLogic.cs</DependentUpon>
     </Compile>
-    <Compile Include="GRule.cs" />
+    <Compile Include="Model\GRule.cs" />
     <Compile Include="Model\DataLoginModel.cs" />
     <Compile Include="Model\GLogin.cs" />
     <Compile Include="Model\GMessage.cs" />
