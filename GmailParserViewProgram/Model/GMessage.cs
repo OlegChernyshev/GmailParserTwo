@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,36 @@ namespace GmailParserViewProgram.Model
 
         // "16146f5b41668414"
 
+        public byte[] GetMessageFile (List<string> messageId , string path)
+        {
+            byte[] data = null;
+            foreach (string id in messageId)
+            { 
+                var emailRequest = service.Users.Messages.Get("me", id);
+                emailRequest.Format = UsersResource.MessagesResource.GetRequest.FormatEnum.Full;
+                var parts = emailRequest.Execute().Payload.Parts;
+                foreach (var part in parts)
+                {
+                    if (!String.IsNullOrEmpty(part.Filename))
+                    {
+                        String attId = part.Body.AttachmentId;
+                        MessagePartBody attachPart = service.Users.Messages.Attachments.Get("me", id, attId).Execute();
+
+                        // Converting from RFC 4648 base64 to base64url encoding
+                        // see http://en.wikipedia.org/wiki/Base64#Implementations_and_history
+                        String attachData = attachPart.Data.Replace('-', '+');
+                        attachData = attachData.Replace('_', '/');
+
+                        data = Convert.FromBase64String(attachData);
+                        //string strin = Encoding.ASCII.GetString(data);
+                        //stream.Write(data, 0, data.Length);
+                        File.WriteAllBytes(Path.Combine(path, part.Filename), data);
+                    }
+                }
+            }
+            return data;
+        }
+
         public string GetMessageRaw( List<string> messageId )
         {
             foreach (string id in messageId)
@@ -40,19 +71,49 @@ namespace GmailParserViewProgram.Model
                 var emailRequest = service.Users.Messages.Get("me", id);
                 emailRequest.Format = UsersResource.MessagesResource.GetRequest.FormatEnum.Full;
                 Message m = emailRequest.Execute();
+                string str1 = m.Payload.Body.Data;
                 /*
                 emailRequest.Format = UsersResource.MessagesResource.GetRequest.FormatEnum.Raw;
-                byte[] bytes = Encoding.ASCII.GetBytes(emailRequest.Execute().Raw);
-                string str = Convert.ToBase64String(bytes);
+                string myraw = emailRequest.Execute().Raw;
+                byte[] bytes = Encoding.ASCII.GetBytes(myraw);
+                string str1 = Convert.ToBase64String(bytes);
                 */
+
+
+
+                //byte[] bytes = Encoding.ASCII.GetBytes(myraw);
+                //string str1 = Convert.ToBase64String(bytes);
+                //byte[] base64 = Convert.FromBase64String(myraw);
+                //string str2 = Convert.ToBase64String(bytes);
+
+                
                 var parts = emailRequest.Execute().Payload.Parts;
                 foreach (var part in parts)
                 {
-                    byte[] bytes = Encoding.Default.GetBytes(part.Body.Data);
-                    string myString = Encoding.UTF8.GetString(bytes);
+                    if (!String.IsNullOrEmpty(part.Filename))
+                    {
+                        String attId = part.Body.AttachmentId;
+                        MessagePartBody attachPart = service.Users.Messages.Attachments.Get("me", id, attId).Execute();
+
+                        // Converting from RFC 4648 base64 to base64url encoding
+                        // see http://en.wikipedia.org/wiki/Base64#Implementations_and_history
+                        String attachData = attachPart.Data.Replace('-', '+');
+                        attachData = attachData.Replace('_', '/');
+
+                        byte[] data = Convert.FromBase64String(attachData);
+                        string strin = Encoding.ASCII.GetString(data);
+
+                       // File.WriteAllBytes(Path.Combine(outputDir, part.Filename), data);
+                    }
+                    /*
+                    byte[] bytes1 = Encoding.Default.GetBytes(part.Body.Data);
+                    string myString = Encoding.ASCII.GetString(bytes);
+                    string stringbase64 = Convert.ToBase64String(bytes);
+                    */
                 }
 
                 string str = emailRequest.Execute().Payload.Body.Data;
+                
             }
             return "hello";
         }

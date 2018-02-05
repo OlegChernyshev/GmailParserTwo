@@ -34,12 +34,13 @@ namespace GmailParserViewProgram
 
             //string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("TestTag" , "testpath") , gMessage.GetMessages()));
 
+            gMessage.GetMessageFile(gMessage.Find(new GRule("TestTag", "testpath"), gMessage.GetMessages()) , "path//");
 
 
             //UserData.GetUserData().CreateGmailService();
             //UserData.GetUserData().ListMessagesMatchungQuerty(UserData.GetUserData().GmailService, "me", String.Empty);
 
-            
+
 
             //Google.Apis.Gmail.v1.Data.Message mes = UserData.GetMessage(UserData.GetUserData().GmailService, "chernyshev360@gmail.com", "0");
             //tb_mail.Text = mes.Payload.Headers.ToString();
