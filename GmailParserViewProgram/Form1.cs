@@ -35,7 +35,7 @@ namespace GmailParserViewProgram
             GLogin.Glogin.CreateGmailService();
             GMessage gMessage = new GMessage(GLogin.Glogin.GmailService, dataLogin);
 
-            string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("TestTag" , "testpath") , gMessage.GetMessages()));
+            //string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("TestTag" , "testpath") , gMessage.GetMessages()));
 
 
 
