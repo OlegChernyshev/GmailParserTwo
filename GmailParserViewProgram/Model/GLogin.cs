@@ -30,7 +30,7 @@ namespace GmailParserViewProgram.Model
         const string ApplicationName = "EmailParser.EBFI";
         const string clientId = "924776002477-2lmjf195p2ajjbshcsubeg2sr9lmordv.apps.googleusercontent.com";
         const string clientSecret = "6o1rF8fLCdzYbzmOojU6UoYn";
-        const string userName = "user";
+        const string userName = "cast";
 
         string[] scopes = new string[]
             {
