@@ -21,28 +21,36 @@ namespace GmailParserViewProgram
         {
             InitializeComponent();
             this.Show();
+
+
             fmtl = new FormMailTriggerLogic();
 
             //Act.DataLoginAct.Read();
 
 
-            DataLoginModel dataLogin = new DataLoginModel("me" , "1234");
+            //DataLoginModel dataLogin = new DataLoginModel("me" , "1234");
 
             GLogin.Init();
             GLogin.Glogin.CreateGmailService();
-            GMessage gMessage = new GMessage(GLogin.Glogin.GmailService, dataLogin);
 
             //string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("TestTag" , "testpath") , gMessage.GetMessages()));
 
+            //CheckMessages(dataLogin);
 
 
             //UserData.GetUserData().CreateGmailService();
             //UserData.GetUserData().ListMessagesMatchungQuerty(UserData.GetUserData().GmailService, "me", String.Empty);
 
-            
+
 
             //Google.Apis.Gmail.v1.Data.Message mes = UserData.GetMessage(UserData.GetUserData().GmailService, "chernyshev360@gmail.com", "0");
             //tb_mail.Text = mes.Payload.Headers.ToString();
+        }
+
+        private async void CheckMessages (DataLoginModel dataLogin)
+        {
+            GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);
+            await gMessage.GetFileAsync(gMessage.Find(new GRule("TestTag", "testpath"), gMessage.GetMessages()), "C:/Users/Home/Desktop/ds/");
         }
 
         private async void FormMailTrigger_Load(object sender, EventArgs e)
