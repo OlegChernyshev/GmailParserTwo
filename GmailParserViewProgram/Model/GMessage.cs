@@ -23,20 +23,20 @@ namespace GmailParserViewProgram.Model
         private string email;
         private string password;
 
-        public GMessage(GmailService service, DataLoginModel login)
+        public GMessage(GmailService service /* , DataLoginModel login */ )
         {
             this.service = service;
-            this.email = login.Email;
-            this.password = login.Password;
+            //this.email = login.Email;
+            //this.password = login.Password;
         }
 
         // "16146f5b41668414"
 
-        public byte[] GetMessageFile (List<string> messageId , string path)
+        public byte[] GetFile (List<string> messageId, string path)
         {
             byte[] data = null;
             foreach (string id in messageId)
-            { 
+            {
                 var emailRequest = service.Users.Messages.Get("me", id);
                 emailRequest.Format = UsersResource.MessagesResource.GetRequest.FormatEnum.Full;
                 var parts = emailRequest.Execute().Payload.Parts;
@@ -60,6 +60,14 @@ namespace GmailParserViewProgram.Model
                 }
             }
             return data;
+        }
+
+        public Task<byte[]> GetFileAsync (List<string> messageId , string path)
+        {
+            return Task.Run(() => {
+
+                return GetFile(messageId, path);
+            });
         }
 
         public string GetMessageRaw( List<string> messageId )
@@ -134,11 +142,19 @@ namespace GmailParserViewProgram.Model
                 messageData.Format = UsersResource.MessagesResource.GetRequest.FormatEnum.Metadata;
                 IList<MessagePartHeader> headers = messageData.Execute().Payload.Headers;
                 foreach (var val in headers)
-                    foreach (GRule item in GRule.grules)
+                    foreach (GRule item in GRule.GetGrules())
                         if (val.Value == item.tag)
                             listId.Add(id);
             }
             return listId;
+        }
+
+        public Task<List<string>> FindAsync(GRule gRule, List<string> ids)
+        {
+            return Task.Run(() =>
+            {
+                return Find(gRule, ids);
+            });
         }
 
 
@@ -151,6 +167,14 @@ namespace GmailParserViewProgram.Model
                 ids.Add(item.Id);
             }
             return ids;
+        }
+
+        public Task<List<string>> GetMessageAsync ()
+        {
+            return Task.Run(() =>
+            {
+                return GetMessages();
+            });
         }
 
 
