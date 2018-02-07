@@ -28,19 +28,12 @@ namespace GmailParserViewProgram.Model
         {
 
         }
-
-<<<<<<< HEAD
         const string ApplicationName = "EmailParser.EBFI";
         const string clientId = "924776002477-2lmjf195p2ajjbshcsubeg2sr9lmordv.apps.googleusercontent.com";
         const string clientSecret = "6o1rF8fLCdzYbzmOojU6UoYn";
 
-
-
         const string userName = "user";
 
-
-=======
->>>>>>> 8dfe3537ef99217be928d5fcdf213927ba969f10
         string[] scopes = new string[]
             {
                 GmailService.Scope.GmailReadonly,
@@ -48,18 +41,13 @@ namespace GmailParserViewProgram.Model
                 GmailService.Scope.GmailMetadata
             };
 
-        const string ApplicationName = "EmailParser.EBFI";
-        const string clientId = "924776002477-2lmjf195p2ajjbshcsubeg2sr9lmordv.apps.googleusercontent.com";
-        const string clientSecret = "6o1rF8fLCdzYbzmOojU6UoYn";
-        const string userName = "cast";
-
         private UserCredential credential;
         private GmailService gmailService;
         public GmailService GmailService { get { return gmailService; } private set { gmailService = value; } }
 
         public void CreateGmailService()
         {
-<<<<<<< HEAD
+
              credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
              new ClientSecrets
              {
@@ -70,7 +58,7 @@ namespace GmailParserViewProgram.Model
              userName,
              CancellationToken.None
              ).Result;
-=======
+
             
 
             credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
@@ -83,17 +71,12 @@ namespace GmailParserViewProgram.Model
                 userName,
                 CancellationToken.None
                 ).Result;
->>>>>>> 4cc6251531fb85721edfc6cd40e8a899e4ac9ed6
 
             gmailService = new GmailService(new BaseClientService.Initializer
             {
                 ApplicationName = "GmailParserViewProgram",
                 HttpClientInitializer = credential
             });
-<<<<<<< HEAD
-=======
-            //FileParser.Delete(s);
->>>>>>> 4cc6251531fb85721edfc6cd40e8a899e4ac9ed6
 
         }
 
