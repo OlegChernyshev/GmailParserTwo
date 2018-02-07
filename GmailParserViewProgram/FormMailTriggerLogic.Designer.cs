@@ -65,7 +65,7 @@
             // 
             // tb_local
             // 
-<<<<<<< HEAD
+
             this.tb_password.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.tb_password.Location = new System.Drawing.Point(61, 12);
             this.tb_password.Name = "tb_password";
@@ -73,7 +73,7 @@
             this.tb_password.Size = new System.Drawing.Size(284, 26);
             this.tb_password.TabIndex = 9;
             this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
-=======
+
             this.tb_local.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.tb_local.Location = new System.Drawing.Point(71, 32);
             this.tb_local.Name = "tb_local";
@@ -81,7 +81,7 @@
             this.tb_local.Size = new System.Drawing.Size(351, 26);
             this.tb_local.TabIndex = 9;
             this.tb_local.TextChanged += new System.EventHandler(this.tb_local_TextChanged);
->>>>>>> 4cc6251531fb85721edfc6cd40e8a899e4ac9ed6
+
             // 
             // btn_select
             // 
