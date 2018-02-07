@@ -87,6 +87,10 @@ namespace GmailParserViewProgram
             }
         }
 
+<<<<<<< HEAD
+        private void tb_password_TextChanged(object sender, EventArgs e)
+        {
+=======
 
         private bool tb_local_text_find = false;
         private void tb_local_TextChanged(object sender, EventArgs e)
@@ -141,6 +145,7 @@ namespace GmailParserViewProgram
             //Program.ClearForm();
             FormMailTrigger formMailTrigger = new FormMailTrigger();
             formMailTrigger.ShowDialog();
+>>>>>>> 4cc6251531fb85721edfc6cd40e8a899e4ac9ed6
 
         }
     }
