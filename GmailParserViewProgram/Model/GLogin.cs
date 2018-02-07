@@ -27,15 +27,6 @@ namespace GmailParserViewProgram.Model
 
         }
 
-        const string ApplicationName = "EmailParser.EBFI";
-        const string clientId = "924776002477-2lmjf195p2ajjbshcsubeg2sr9lmordv.apps.googleusercontent.com";
-        const string clientSecret = "6o1rF8fLCdzYbzmOojU6UoYn";
-<<<<<<< HEAD
-        const string userName = "corey";
-=======
-        const string userName = "user";
->>>>>>> c1c17ca71cd22dce7a1681845b12f3cce9040d3b
-
         string[] scopes = new string[]
             {
                 GmailService.Scope.GmailReadonly,
@@ -43,33 +34,40 @@ namespace GmailParserViewProgram.Model
                 GmailService.Scope.GmailMetadata
             };
 
+        const string ApplicationName = "EmailParser.EBFI";
+        const string clientId = "924776002477-2lmjf195p2ajjbshcsubeg2sr9lmordv.apps.googleusercontent.com";
+        const string clientSecret = "6o1rF8fLCdzYbzmOojU6UoYn";
+        const string userName = "cast";
+
         private UserCredential credential;
         private GmailService gmailService;
         public GmailService GmailService { get { return gmailService; } private set { gmailService = value; } }
 
         public void CreateGmailService()
         {
-            credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                new ClientSecrets
-                {
-                    ClientId = clientId,
-                    ClientSecret = clientSecret
-                },
-                new[] { GmailService.Scope.GmailModify },
-                userName,
-                CancellationToken.None
-                ).Result;
+             credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+             new ClientSecrets
+             {
+                 ClientId = clientId,
+                 ClientSecret = clientSecret
+             },
+             new[] { GmailService.Scope.GmailModify },
+             userName,
+             CancellationToken.None
+             ).Result;
 
             gmailService = new GmailService(new BaseClientService.Initializer
             {
                 ApplicationName = "GmailParserViewProgram",
                 HttpClientInitializer = credential
             });
+
         }
 
-        public void DeleteUserAuthorization()
+        public async Task DeleteUserAuthorization()
         {
-            
+            await credential.RevokeTokenAsync(CancellationToken.None);
         }
+
     }
 }

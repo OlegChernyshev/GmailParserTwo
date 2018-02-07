@@ -53,6 +53,7 @@
             this.tb_password.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tb_password.Size = new System.Drawing.Size(284, 26);
             this.tb_password.TabIndex = 9;
+            this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
             // 
             // saveFileDialog
             // 

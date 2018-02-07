@@ -31,7 +31,7 @@ namespace GmailParserViewProgram
             //DataLoginModel dataLogin = new DataLoginModel("me" , "1234");
 
             GLogin.Init();
-            GLogin.Glogin.CreateGmailService();
+            GLogin.Glogin.CreateGmailServiceAsync();
 
             //string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("TestTag" , "testpath") , gMessage.GetMessages()));
 
