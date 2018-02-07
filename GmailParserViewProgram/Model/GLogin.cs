@@ -11,6 +11,8 @@ using Google.Apis.Gmail.v1;
 using Google.Apis.Gmail.v1.Data;
 using Google.Apis.Services;
 
+using GmailParserViewProgram.Act;
+
 namespace GmailParserViewProgram.Model
 {
     public class GLogin
@@ -45,6 +47,8 @@ namespace GmailParserViewProgram.Model
 
         public void CreateGmailService()
         {
+            
+
             credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                 new ClientSecrets
                 {
@@ -61,6 +65,8 @@ namespace GmailParserViewProgram.Model
                 ApplicationName = "GmailParserViewProgram",
                 HttpClientInitializer = credential
             });
+            //FileParser.Delete(s);
+
         }
     }
 }

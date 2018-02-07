@@ -26,7 +26,7 @@ namespace GmailParserViewProgram.Model
         public GMessage(GmailService service /* , DataLoginModel login */ )
         {
             this.service = service;
-            //this.email = login.Email;
+            this.email = "me";
             //this.password = login.Password;
         }
 
