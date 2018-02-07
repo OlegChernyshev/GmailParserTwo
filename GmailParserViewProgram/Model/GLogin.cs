@@ -28,6 +28,11 @@ namespace GmailParserViewProgram.Model
         {
 
         }
+        const string ApplicationName = "EmailParser.EBFI";
+        const string clientId = "924776002477-2lmjf195p2ajjbshcsubeg2sr9lmordv.apps.googleusercontent.com";
+        const string clientSecret = "6o1rF8fLCdzYbzmOojU6UoYn";
+
+        const string userName = "user";
 
         string[] scopes = new string[]
             {
@@ -36,17 +41,16 @@ namespace GmailParserViewProgram.Model
                 GmailService.Scope.GmailMetadata
             };
 
-        const string ApplicationName = "EmailParser.EBFI";
-        const string clientId = "924776002477-2lmjf195p2ajjbshcsubeg2sr9lmordv.apps.googleusercontent.com";
-        const string clientSecret = "6o1rF8fLCdzYbzmOojU6UoYn";
-        const string userName = "cast";
-
         private UserCredential credential;
         private GmailService gmailService;
         public GmailService GmailService { get { return gmailService; } private set { gmailService = value; } }
 
         public void CreateGmailService()
         {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19250883c4447e52bdc6fed66ab1e825d3059d7e
              credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
              new ClientSecrets
              {
@@ -57,6 +61,10 @@ namespace GmailParserViewProgram.Model
              userName,
              CancellationToken.None
              ).Result;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 19250883c4447e52bdc6fed66ab1e825d3059d7e
             
 
             credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
