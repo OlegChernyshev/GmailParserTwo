@@ -15,15 +15,12 @@ namespace GmailParserViewProgram
 {
     public partial class FormMailTrigger : System.Windows.Forms.Form
     {
-        private FormMailTriggerLogic fmtl = null;
+        
 
         public FormMailTrigger()
         {
             InitializeComponent();
-            this.Show();
 
-
-            fmtl = new FormMailTriggerLogic();
 
             //Act.DataLoginAct.Read();
 
@@ -33,6 +30,7 @@ namespace GmailParserViewProgram
             GLogin.Init();
             GLogin.Glogin.CreateGmailServiceAsync();
 
+            GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);
             //string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("TestTag" , "testpath") , gMessage.GetMessages()));
 
             //CheckMessages(dataLogin);
@@ -80,26 +78,10 @@ namespace GmailParserViewProgram
 
         private async void btn_formLogicStart_Click(object sender, EventArgs e)
         {
-            if (tb_mail.Text == "chernyshev360" || tb_password.Text == "1234")
-            {
-                SetInfo("Connecting to email...\nWait please!", Color.GreenYellow);
-
-                await ConnectionGmail();
-            }
-            if (tb_mail.Text != "chernyshev360" || tb_password.Text != "1234")
-                SetInfo("Invalid email or password!", Color.Red);
-            if (tb_mail.Text == String.Empty || tb_password.Text == String.Empty)
-                SetInfo("Enter your details from account.", Color.Cornsilk);
+            //Program.Sweatch(Program.GetFormMailTriggerLogic());
+            Program.GetFormMailTriggerLogic();
         }
 
-        private void cb_showPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_showPassword.Checked)
-            {
-                tb_password.PasswordChar = '\0';
-            }
-            else tb_password.PasswordChar = '*';
-        }
 
         // Задает информационную строку
         private void SetInfo(String str, Color color)
@@ -114,9 +96,7 @@ namespace GmailParserViewProgram
             {
                 Thread.Sleep(2000);
                 //MailTrigerHide = true;
-                fmtl.Show();
-                fmtl.SetParent(this);
-                fmtl.Focus();
+                Program.Sweatch(Program.GetFormMailTriggerLogic());
             });
         }
 

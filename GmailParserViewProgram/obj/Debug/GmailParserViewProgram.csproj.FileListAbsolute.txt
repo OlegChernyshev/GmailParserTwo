@@ -103,3 +103,4 @@ C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\D
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.csproj.CoreCompileInputs.cache
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.exe
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.pdb
+F:\Job\GP\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.FormDownload.resources
