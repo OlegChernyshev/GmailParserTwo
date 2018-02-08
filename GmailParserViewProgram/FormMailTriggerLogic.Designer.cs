@@ -208,8 +208,8 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.exitToolStripMenuItem.Text = "Log out";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Tick
@@ -221,7 +221,7 @@
             // 
             this.cb_autorun.AutoSize = true;
             this.cb_autorun.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.cb_autorun.Location = new System.Drawing.Point(194, 5);
+            this.cb_autorun.Location = new System.Drawing.Point(210, 5);
             this.cb_autorun.Name = "cb_autorun";
             this.cb_autorun.Size = new System.Drawing.Size(62, 17);
             this.cb_autorun.TabIndex = 20;
