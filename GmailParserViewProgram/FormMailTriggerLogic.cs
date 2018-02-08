@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -26,20 +27,27 @@ namespace GmailParserViewProgram
             listView.GridLines = true;
             listView.Margin = new Padding(40, 0, 30, 0);
 
-            GRule.Read();
-
-            refreshListData();
         }
 
         private void FormMailTriggerLogic_Load(object sender, EventArgs e)
         {
+            listView.Items.Clear();
+
+            GRule.Read();
+
+            refreshListData();
+
             if (AutoRun.IsEnabled()) cb_autorun.Checked = true;
             else cb_autorun.Checked = false;
 
             l_version.Text = "v " + Application.ProductVersion;
 
+            string pattern = "";
+
+
+            if (GLogin.Glogin == null) GLogin.Init(); GLogin.Glogin.CreateGmailService();
             GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);
-            string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("Aliter-Axi", "testpath") , gMessage.GetMessages()));
+            //string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("Aliter-Axi", "testpath") , gMessage.GetMessages()));
         }
 
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
