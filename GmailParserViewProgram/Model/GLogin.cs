@@ -47,11 +47,7 @@ namespace GmailParserViewProgram.Model
 
         public void CreateGmailService()
         {
-<<<<<<< HEAD
-=======
-
->>>>>>> 19250883c4447e52bdc6fed66ab1e825d3059d7e
-             credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+            credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
              new ClientSecrets
              {
                  ClientId = clientId,
@@ -61,22 +57,6 @@ namespace GmailParserViewProgram.Model
              userName,
              CancellationToken.None
              ).Result;
-<<<<<<< HEAD
-=======
-
->>>>>>> 19250883c4447e52bdc6fed66ab1e825d3059d7e
-            
-
-            credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                new ClientSecrets
-                {
-                    ClientId = clientId,
-                    ClientSecret = clientSecret
-                },
-                new[] { GmailService.Scope.GmailModify },
-                userName,
-                CancellationToken.None
-                ).Result;
 
             gmailService = new GmailService(new BaseClientService.Initializer
             {

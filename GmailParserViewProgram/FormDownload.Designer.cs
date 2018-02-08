@@ -33,9 +33,9 @@
             // 
             // listView
             // 
-            this.listView.Location = new System.Drawing.Point(1, -1);
+            this.listView.Location = new System.Drawing.Point(-3, -1);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(453, 456);
+            this.listView.Size = new System.Drawing.Size(457, 456);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             // 

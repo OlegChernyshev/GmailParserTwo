@@ -86,7 +86,7 @@
             this.MinimizeBox = false;
             this.Name = "FormMailTrigger";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mail Trigger";
+            this.Text = "Autoriation";
             this.Load += new System.EventHandler(this.FormMailTrigger_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
