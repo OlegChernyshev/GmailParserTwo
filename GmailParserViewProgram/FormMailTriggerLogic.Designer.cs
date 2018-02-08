@@ -65,29 +65,15 @@
             // 
             // tb_local
             // 
-<<<<<<< HEAD
 
-            this.tb_password.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.tb_password.Location = new System.Drawing.Point(61, 12);
-            this.tb_password.Name = "tb_password";
-            this.tb_password.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.tb_password.Size = new System.Drawing.Size(284, 26);
-            this.tb_password.TabIndex = 9;
-            this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
 
-=======
->>>>>>> 19250883c4447e52bdc6fed66ab1e825d3059d7e
             this.tb_local.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.tb_local.Location = new System.Drawing.Point(71, 32);
             this.tb_local.Name = "tb_local";
             this.tb_local.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tb_local.Size = new System.Drawing.Size(351, 26);
             this.tb_local.TabIndex = 9;
-            this.tb_local.TextChanged += new System.EventHandler(this.tb_local_TextChanged);
-<<<<<<< HEAD
 
-=======
->>>>>>> 19250883c4447e52bdc6fed66ab1e825d3059d7e
             // 
             // btn_select
             // 
@@ -159,7 +145,6 @@
             this.tb_tag.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tb_tag.Size = new System.Drawing.Size(256, 26);
             this.tb_tag.TabIndex = 13;
-            this.tb_tag.TextChanged += new System.EventHandler(this.tb_tag_TextChanged);
             // 
             // btn_add
             // 
@@ -170,7 +155,6 @@
             this.btn_add.TabIndex = 15;
             this.btn_add.Text = "add";
             this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_reset
             // 
@@ -181,7 +165,6 @@
             this.btn_reset.TabIndex = 17;
             this.btn_reset.Text = "reset";
             this.btn_reset.UseVisualStyleBackColor = true;
-            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // menuStrip1
             // 
@@ -194,7 +177,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(533, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // toolStripMenuItem1
             // 
@@ -210,7 +192,6 @@
             this.Action_ToolStripMenuItem.Name = "Action_ToolStripMenuItem";
             this.Action_ToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.Action_ToolStripMenuItem.Text = "Save";
-            this.Action_ToolStripMenuItem.Click += new System.EventHandler(this.Action_ToolStripMenuItem_Click);
             // 
             // действиеНазадToolStripMenuItem
             // 
@@ -223,7 +204,6 @@
             this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
             this.downloadToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.downloadToolStripMenuItem.Text = "Download";
-            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -235,7 +215,6 @@
             // 
             this.Tick.Enabled = true;
             this.Tick.Interval = 400;
-            this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
             // FormMailTriggerLogic
             // 
@@ -257,7 +236,6 @@
             this.Name = "FormMailTriggerLogic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMailTriggerLogic";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMailTriggerLogic_FormClosed);
             this.Load += new System.EventHandler(this.FormMailTriggerLogic_Load);
             this.listViewMenuStrip.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
