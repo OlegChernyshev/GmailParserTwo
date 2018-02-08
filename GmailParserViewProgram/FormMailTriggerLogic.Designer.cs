@@ -67,12 +67,21 @@
             // 
             // tb_local
             // 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
             this.tb_local.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.tb_local.Location = new System.Drawing.Point(71, 32);
             this.tb_local.Name = "tb_local";
             this.tb_local.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tb_local.Size = new System.Drawing.Size(351, 26);
             this.tb_local.TabIndex = 9;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
             // 
             // btn_select
             // 
@@ -154,7 +163,6 @@
             this.btn_add.TabIndex = 15;
             this.btn_add.Text = "add";
             this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_reset
             // 
@@ -165,7 +173,6 @@
             this.btn_reset.TabIndex = 17;
             this.btn_reset.Text = "reset";
             this.btn_reset.UseVisualStyleBackColor = true;
-            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // menuStrip1
             // 
@@ -178,7 +185,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(533, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // toolStripMenuItem1
             // 
@@ -194,7 +200,6 @@
             this.Action_ToolStripMenuItem.Name = "Action_ToolStripMenuItem";
             this.Action_ToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.Action_ToolStripMenuItem.Text = "Save";
-            this.Action_ToolStripMenuItem.Click += new System.EventHandler(this.Action_ToolStripMenuItem_Click);
             // 
             // действиеНазадToolStripMenuItem
             // 
@@ -207,7 +212,6 @@
             this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
             this.downloadToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.downloadToolStripMenuItem.Text = "Download";
-            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -220,7 +224,6 @@
             // 
             this.Tick.Enabled = true;
             this.Tick.Interval = 400;
-            this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
             // cb_autorun
             // 
@@ -265,8 +268,12 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMailTriggerLogic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+<<<<<<< HEAD
+            this.Text = "FormMailTriggerLogic";
+=======
             this.Text = "Settings";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMailTriggerLogic_FormClosed);
+>>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
             this.Load += new System.EventHandler(this.FormMailTriggerLogic_Load);
             this.listViewMenuStrip.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
