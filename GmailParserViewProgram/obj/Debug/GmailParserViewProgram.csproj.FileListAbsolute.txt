@@ -63,9 +63,6 @@ F:\Job\GP\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram
 F:\Job\GP\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.Properties.Resources.resources
 F:\Job\GP\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.csproj.GenerateResource.Cache
 F:\Job\GP\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.csproj.CoreCompileInputs.cache
-C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\bin\Debug\GmailParserViewProgram.exe.config
-C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\bin\Debug\GmailParserViewProgram.exe
-C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\bin\Debug\GmailParserViewProgram.pdb
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\bin\Debug\AE.Net.Mail.dll
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\bin\Debug\Google.Apis.Auth.dll
@@ -96,8 +93,6 @@ C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\D
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.Properties.Resources.resources
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.csproj.GenerateResource.Cache
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.csproj.CoreCompileInputs.cache
-C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.exe
-C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.pdb
 F:\Job\GP\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.FormDownload.resources
 C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\GmailParserViewProgram.FormDownload.resources
 F:\Job\GP\GmailParserTwo\GmailParserViewProgram\bin\Debug\MailTrigger.exe.config
@@ -105,3 +100,8 @@ F:\Job\GP\GmailParserTwo\GmailParserViewProgram\bin\Debug\MailTrigger.exe
 F:\Job\GP\GmailParserTwo\GmailParserViewProgram\bin\Debug\MailTrigger.pdb
 F:\Job\GP\GmailParserTwo\GmailParserViewProgram\obj\Debug\MailTrigger.exe
 F:\Job\GP\GmailParserTwo\GmailParserViewProgram\obj\Debug\MailTrigger.pdb
+C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\bin\Debug\MailTrigger.exe.config
+C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\bin\Debug\MailTrigger.exe
+C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\bin\Debug\MailTrigger.pdb
+C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\MailTrigger.exe
+C:\Users\Konstantin\Documents\GitHub\GmailParserTwo\GmailParserViewProgram\obj\Debug\MailTrigger.pdb

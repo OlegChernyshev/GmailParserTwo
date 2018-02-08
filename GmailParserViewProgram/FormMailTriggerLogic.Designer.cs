@@ -67,21 +67,13 @@
             // 
             // tb_local
             // 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
             this.tb_local.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.tb_local.Location = new System.Drawing.Point(71, 32);
             this.tb_local.Name = "tb_local";
             this.tb_local.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tb_local.Size = new System.Drawing.Size(351, 26);
             this.tb_local.TabIndex = 9;
-<<<<<<< HEAD
-
-=======
->>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
             // 
             // btn_select
             // 
@@ -268,12 +260,9 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMailTriggerLogic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-<<<<<<< HEAD
             this.Text = "FormMailTriggerLogic";
-=======
             this.Text = "Settings";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMailTriggerLogic_FormClosed);
->>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
             this.Load += new System.EventHandler(this.FormMailTriggerLogic_Load);
             this.listViewMenuStrip.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
