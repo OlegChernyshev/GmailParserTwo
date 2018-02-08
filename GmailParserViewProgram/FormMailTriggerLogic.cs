@@ -94,10 +94,7 @@ namespace GmailParserViewProgram
             }
         }
 
-<<<<<<< HEAD
         private void tb_password_TextChanged(object sender, EventArgs e) { }
-=======
->>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
         private bool tb_local_text_find = false;
         private void tb_local_TextChanged(object sender, EventArgs e)
         {
