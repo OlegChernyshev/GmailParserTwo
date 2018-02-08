@@ -27,10 +27,7 @@ namespace GmailParserViewProgram
 
             //DataLoginModel dataLogin = new DataLoginModel("me" , "1234");
 
-            GLogin.Init();
-            GLogin.Glogin.CreateGmailService();
-
-            GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);
+            //GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);
             //string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("TestTag" , "testpath") , gMessage.GetMessages()));
 
             //CheckMessages(dataLogin);
@@ -50,6 +47,8 @@ namespace GmailParserViewProgram
             GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);
             await gMessage.GetFileAsync(gMessage.Find(new GRule("TestTag", "testpath"), gMessage.GetMessages()), "C:/Users/Home/Desktop/ds/");
         }
+
+
 
         private async void FormMailTrigger_Load(object sender, EventArgs e)
         {
@@ -79,6 +78,8 @@ namespace GmailParserViewProgram
         private async void btn_formLogicStart_Click(object sender, EventArgs e)
         {
             //Program.Sweatch(Program.GetFormMailTriggerLogic());
+            GLogin.Init();
+            GLogin.Glogin.CreateGmailService();
             Program.GetFormMailTriggerLogic();
         }
 
@@ -107,9 +108,5 @@ namespace GmailParserViewProgram
             if (MailTrigerHide) FormMailTrigger.ActiveForm.Hide();
         }
 
-        private void tb_password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

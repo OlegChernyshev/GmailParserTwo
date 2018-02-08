@@ -48,6 +48,8 @@
             this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tick = new System.Windows.Forms.Timer(this.components);
+            this.cb_autorun = new System.Windows.Forms.CheckBox();
+            this.l_version = new System.Windows.Forms.Label();
             this.listViewMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,15 +67,21 @@
             // 
             // tb_local
             // 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
             this.tb_local.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.tb_local.Location = new System.Drawing.Point(71, 32);
             this.tb_local.Name = "tb_local";
             this.tb_local.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tb_local.Size = new System.Drawing.Size(351, 26);
             this.tb_local.TabIndex = 9;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
             // 
             // btn_select
             // 
@@ -210,11 +218,34 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Tick
             // 
             this.Tick.Enabled = true;
             this.Tick.Interval = 400;
+            // 
+            // cb_autorun
+            // 
+            this.cb_autorun.AutoSize = true;
+            this.cb_autorun.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cb_autorun.Location = new System.Drawing.Point(194, 5);
+            this.cb_autorun.Name = "cb_autorun";
+            this.cb_autorun.Size = new System.Drawing.Size(62, 17);
+            this.cb_autorun.TabIndex = 20;
+            this.cb_autorun.Text = "autorun";
+            this.cb_autorun.UseVisualStyleBackColor = false;
+            this.cb_autorun.CheckedChanged += new System.EventHandler(this.cb_autorun_CheckedChanged);
+            // 
+            // l_version
+            // 
+            this.l_version.AutoSize = true;
+            this.l_version.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.l_version.Location = new System.Drawing.Point(444, 5);
+            this.l_version.Name = "l_version";
+            this.l_version.Size = new System.Drawing.Size(31, 13);
+            this.l_version.TabIndex = 21;
+            this.l_version.Text = "v 0.1";
             // 
             // FormMailTriggerLogic
             // 
@@ -223,6 +254,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(533, 432);
+            this.Controls.Add(this.l_version);
+            this.Controls.Add(this.cb_autorun);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.btn_add);
@@ -235,7 +268,12 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMailTriggerLogic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+<<<<<<< HEAD
             this.Text = "FormMailTriggerLogic";
+=======
+            this.Text = "Settings";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMailTriggerLogic_FormClosed);
+>>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
             this.Load += new System.EventHandler(this.FormMailTriggerLogic_Load);
             this.listViewMenuStrip.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -266,5 +304,7 @@
         private System.Windows.Forms.Timer Tick;
         private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.CheckBox cb_autorun;
+        private System.Windows.Forms.Label l_version;
     }
 }

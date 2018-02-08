@@ -7,7 +7,7 @@
     <ProjectGuid>{06D9F781-644F-4F2C-8C9D-A3F554B24636}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>GmailParserViewProgram</RootNamespace>
-    <AssemblyName>GmailParserViewProgram</AssemblyName>
+    <AssemblyName>MailTrigger</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -90,6 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Act\AutoRun.cs" />
     <Compile Include="Act\DataLoginAct.cs" />
     <Compile Include="Act\FileParser.cs" />
     <Compile Include="Form1.cs">

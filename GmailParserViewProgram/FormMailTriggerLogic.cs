@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using GmailParserViewProgram.Model;
+using GmailParserViewProgram.Act;
 
 namespace GmailParserViewProgram
 {
@@ -32,7 +33,13 @@ namespace GmailParserViewProgram
 
         private void FormMailTriggerLogic_Load(object sender, EventArgs e)
         {
+            if (AutoRun.IsEnabled()) cb_autorun.Checked = true;
+            else cb_autorun.Checked = false;
 
+            l_version.Text = "v " + Application.ProductVersion;
+
+            GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);
+            string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("Aliter-Axi", "testpath") , gMessage.GetMessages()));
         }
 
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,7 +94,10 @@ namespace GmailParserViewProgram
             }
         }
 
+<<<<<<< HEAD
         private void tb_password_TextChanged(object sender, EventArgs e) { }
+=======
+>>>>>>> 2ae205d30d9660f7d8ba0975eb374791d72f2551
         private bool tb_local_text_find = false;
         private void tb_local_TextChanged(object sender, EventArgs e)
         {
@@ -141,6 +151,21 @@ namespace GmailParserViewProgram
             //Program.ClearForm();
             FormMailTrigger formMailTrigger = new FormMailTrigger();
             formMailTrigger.ShowDialog();
+
+        }
+
+        private async void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            await GLogin.Glogin.DeleteUserAuthorization();
+        }
+
+        private void cb_autorun_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_autorun.Checked)
+            {
+                if (!AutoRun.IsEnabled()) AutoRun.Enabled();
+            }
+            else if (AutoRun.IsEnabled()) AutoRun.Disabled();
 
         }
     }
