@@ -42,7 +42,7 @@ namespace GmailParserViewProgram
             //tb_mail.Text = mes.Payload.Headers.ToString();
         }
 
-        private async void CheckMessages (DataLoginModel dataLogin)
+        private async void CheckMessages ()
         {
             GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);
             await gMessage.GetFileAsync(gMessage.Find(new GRule("TestTag", "testpath"), gMessage.GetMessages()), "C:/Users/Home/Desktop/ds/");
@@ -79,7 +79,11 @@ namespace GmailParserViewProgram
         {
             //Program.Sweatch(Program.GetFormMailTriggerLogic());
             GLogin.Init();
-            GLogin.Glogin.CreateGmailService();
+            try
+            {
+                await GLogin.Glogin.CreateGmailService();
+            }
+            catch(Exception) { }
             Program.GetFormMailTriggerLogic();
         }
 

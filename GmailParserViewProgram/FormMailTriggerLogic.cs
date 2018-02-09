@@ -42,8 +42,9 @@ namespace GmailParserViewProgram
 
             l_version.Text = "v " + Application.ProductVersion;
 
-            string pattern = "";
-
+            string str = "I'm oleg and i hope love ss dfrdv";
+            string pattern = "oleg";
+            bool s = Regex.IsMatch(str , pattern);
 
             if (GLogin.Glogin == null) GLogin.Init(); GLogin.Glogin.CreateGmailService();
             GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);

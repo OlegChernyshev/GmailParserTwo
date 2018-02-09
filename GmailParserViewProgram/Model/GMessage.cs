@@ -21,16 +21,12 @@ namespace GmailParserViewProgram.Model
 
         private GmailService service;
         private string email;
-        private string password;
 
-        public GMessage(GmailService service /* , DataLoginModel login */ )
+        public GMessage(GmailService service)
         {
             this.service = service;
             this.email = "me";
-            //this.password = login.Password;
         }
-
-        // "16146f5b41668414"
 
         public byte[] GetFile (List<string> messageId, string path)
         {
@@ -56,6 +52,7 @@ namespace GmailParserViewProgram.Model
                         //string strin = Encoding.ASCII.GetString(data);
                         //stream.Write(data, 0, data.Length);
                         File.WriteAllBytes(Path.Combine(path, part.Filename), data);
+
                     }
                 }
             }

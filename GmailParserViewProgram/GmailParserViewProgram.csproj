@@ -91,8 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Act\AutoRun.cs" />
-    <Compile Include="Act\DataLoginAct.cs" />
-    <Compile Include="Act\FileParser.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,8 +109,8 @@
     <Compile Include="FormMailTriggerLogic.Designer.cs">
       <DependentUpon>FormMailTriggerLogic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\GFilePath.cs" />
     <Compile Include="Model\GRule.cs" />
-    <Compile Include="Model\DataLoginModel.cs" />
     <Compile Include="Model\GLogin.cs" />
     <Compile Include="Model\GMessage.cs" />
     <Compile Include="Program.cs" />

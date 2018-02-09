@@ -45,10 +45,13 @@ namespace GmailParserViewProgram.Model
         private GmailService gmailService;
         public GmailService GmailService { get { return gmailService; } private set { gmailService = value; } }
 
-        public void CreateGmailService()
+        public async Task CreateGmailService()
         {
-            
-            credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+            CancellationTokenSource cts = new CancellationTokenSource();
+            cts.CancelAfter(TimeSpan.FromSeconds(20));
+            CancellationToken ct = cts.Token;
+
+            credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
              new ClientSecrets
              {
                  ClientId = clientId,
@@ -56,9 +59,10 @@ namespace GmailParserViewProgram.Model
              },
              new[] { GmailService.Scope.GmailModify },
              userName,
-             CancellationToken.None
-             ).Result;
-            
+             ct
+             );
+
+            if (ct.IsCancellationRequested) return;
 
             gmailService = new GmailService(new BaseClientService.Initializer
             {

@@ -37,10 +37,15 @@ namespace GmailParserViewProgram.Model
 
         static public void Save()
         {
+            FileStream s;
             BinaryFormatter binaryFormatter = new BinaryFormatter();
 
             //FileStream fs = FileParser.CreateOrOpen(pathFileSave);
-            var s = FileParser.CreateOrOpen(pathFileSave);
+            if (File.Exists(pathFileSave))
+            {
+                s = File.Open(pathFileSave, FileMode.Open);
+            }
+            else s = File.Create(pathFileSave);
             if (s != null)
             {
                 s.Close();
@@ -52,7 +57,9 @@ namespace GmailParserViewProgram.Model
         }
 
         static public void Read()
-        {/*
+        {
+            FileStream s;
+            /*
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream fs = FileParser.CreateOrOpen(pathFileSave);
             fs.Close();
@@ -61,7 +68,11 @@ namespace GmailParserViewProgram.Model
                 grules = (List<GRule>)binaryFormatter.Deserialize(fs);
             fs.Close();
             */
-            var s = FileParser.CreateOrOpen(pathFileSave);
+            if (File.Exists(pathFileSave))
+            {
+                s = File.Open(pathFileSave, FileMode.Open);
+            }
+            else s = File.Create(pathFileSave);
             if (s != null)
             {
                 s.Close();
