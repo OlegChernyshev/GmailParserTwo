@@ -11,6 +11,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Threading;
+
 using GmailParserViewProgram.Model;
 using GmailParserViewProgram.Act;
 
@@ -28,27 +30,34 @@ namespace GmailParserViewProgram
             listView.Margin = new Padding(40, 0, 30, 0);
 
         }
-
+        GMessage gMessage = null;
         private void FormMailTriggerLogic_Load(object sender, EventArgs e)
         {
             listView.Items.Clear();
 
+            l_version.Text = Application.ProductVersion.ToString();
+            l_status.Text = "tap start";
+            l_count.Text = "0";
             GRule.Read();
 
             refreshListData();
 
             if (AutoRun.IsEnabled()) cb_autorun.Checked = true;
             else cb_autorun.Checked = false;
+<<<<<<< HEAD
 
             l_version.Text = "v " + Application.ProductVersion;
 
             string str = "I'm oleg and i hope love ss dfrdv";
             string pattern = "oleg";
             bool s = Regex.IsMatch(str , pattern);
+=======
+            
+>>>>>>> 9c4023cedcfff249270ca9f28cfeeb205678394d
 
             if (GLogin.Glogin == null) GLogin.Init(); GLogin.Glogin.CreateGmailService();
-            GMessage gMessage = new GMessage(GLogin.Glogin.GmailService);
-            //string str = gMessage.GetMessageRaw(gMessage.Find( new GRule("Aliter-Axi", "testpath") , gMessage.GetMessages()));
+            gMessage = new GMessage(GLogin.Glogin.GmailService);
+            //string str1 = gMessage.GetMessageRaw(gMessage.Find( new GRule(tb_tag.Text, tb_local.Text) , gMessage.GetMessages()));
         }
 
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
@@ -120,7 +129,15 @@ namespace GmailParserViewProgram
 
         private void Tick_Tick(object sender, EventArgs e)
         {
-            if (tb_local_text_find && tb_tag_text_find) ;    
+            if (gMessage != null)
+            {
+                l_counterMessage.Text = "message find : " + GMessage.messageFind.ToString();
+                l_fileCounter.Text = "file find : " + GMessage.fileFind.ToString();
+                l_counter.Text = "count message : " + GMessage.countMessage.ToString();
+            }
+
+            l_status.Text = status;
+            l_count.Text = GMessage.counter.ToString();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -173,6 +190,63 @@ namespace GmailParserViewProgram
             }
             else if (AutoRun.IsEnabled()) AutoRun.Disabled();
 
+        }
+
+        Task findTask;
+
+        static string str = String.Empty;
+        static string status = String.Empty;
+        private async void btn_start_Click(object sender, EventArgs e)
+        {
+
+            if (gMessage != null)
+            {
+                btn_start.Text = "Wait";
+                btn_start.Text = await Task<string>.Run(() => {
+
+                    GRule gRule = new GRule(tb_tag.Text, tb_local.Text);
+
+                    l_counterMessage.Text = "message find : " + GMessage.messageFind.ToString();
+                    l_fileCounter.Text = "file find : " + GMessage.fileFind.ToString();
+                    //gMessage.GetFile(gMessage.Find(new GRule(tb_tag.Text, tb_local.Text), gMessage.GetMessages()), tb_local.Text);
+                    status = "Get messages...";
+                    List<string> messagesId = gMessage.GetMessages();
+                    status = "find messages...";
+                    messagesId = gMessage.Find(gRule , messagesId);
+                    status  = "Get files...";
+                    gMessage.GetFile(messagesId, gRule.path);
+                    l_counter.Text = "count message : " + GMessage.countMessage.ToString();
+                    return "Start";
+                });
+
+                //findTask.Wait();
+
+
+                /*
+                await findTask.Run(() => {
+                    l_counterMessage.Text = "message find : " + gMessage.messageFind.ToString();
+                    l_fileCounter.Text = "file find : " + gMessage.fileFind.ToString();
+                    //gMessage.GetFile(gMessage.Find(new GRule(tb_tag.Text, tb_local.Text), gMessage.GetMessages()), tb_local.Text);
+                    List<string> s1 = gMessage.GetMessages();
+                    l_counter.Text = "count message : " + gMessage.countMessage.ToString();
+                    var s2 = s1;
+                });
+                */
+                l_counter.Text = "count message : " + GMessage.countMessage.ToString();
+
+
+            }
+        }
+
+        static void ThreadFunction()
+        {
+            //Аналогично главному потоку выводим три раза текст
+            int count = 3;
+            while (count > 0)
+            {
+                Console.WriteLine("Это дочерний поток программы!");
+                --count;
+            }
         }
     }
 }

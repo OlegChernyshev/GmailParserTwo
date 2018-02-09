@@ -53,7 +53,7 @@ namespace GmailParserViewProgram
         private async void FormMailTrigger_Load(object sender, EventArgs e)
         {
             MailTrigerHide = false;
-
+            /*
             await Task.Run(() =>
             {
                 byte n = 1;
@@ -72,6 +72,7 @@ namespace GmailParserViewProgram
                     }
                 }
             });
+            */
 
         }
 
